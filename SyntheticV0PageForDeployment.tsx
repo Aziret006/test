@@ -1,8 +1,7 @@
 "use client"
-
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import "../test/styles/promotions.scss" 
+import "./styles/promotions.scss" 
 
 interface Promotion {
   id: number
