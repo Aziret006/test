@@ -1,0 +1,41 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title= title || 'PrimeBet'
+    link(rel="stylesheet", href="/css/promotions.css")
+    block styles
+  body
+    header.header
+      .container
+        .header__logo
+          a(href="/") PrimeBet
+        nav.header__nav
+          ul.header__menu
+            li.header__menu-item
+              a(href="/") Home
+            li.header__menu-item
+              a(href="/").active Promotions
+            li.header__menu-item
+              a(href="/") Sports
+            li.header__menu-item
+              a(href="/") Casino
+            li.header__menu-item
+              a(href="/") Live Betting
+    
+    main.main
+      block content
+    
+    footer.footer
+      .container
+        .footer__content
+          .footer__logo PrimeBet
+          .footer__copyright &copy; 2025 PrimeBet. All rights reserved.
+          .footer__links
+            a(href="/") Terms & Conditions
+            a(href="/") Privacy Policy
+            a(href="/") Responsible Gaming
+    
+    block scripts
+      script(src="/js/promotions.js")

@@ -1,0 +1,17 @@
+mixin promoCard(title, description, endDate, image, isExpired)
+  - const formattedDate = new Date(endDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  - const cardClass = isExpired ? 'promo-card promo-card--expired' : 'promo-card'
+  
+  .promo-card(class=cardClass, data-status=isExpired ? 'expired' : 'active')
+    .promo-card__image
+      img(src=image, alt=title)
+      if isExpired
+        .promo-card__expired-badge Expired
+    .promo-card__content
+      h3.promo-card__title= title
+      p.promo-card__description= description
+      .promo-card__footer
+        .promo-card__date
+          span.promo-card__date-label Valid until:
+          span.promo-card__date-value= formattedDate
+        a.promo-card__button(href="#") Details

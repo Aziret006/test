@@ -1,0 +1,19 @@
+extends layout.pug
+include components/promo-card.pug
+
+block content
+  .container
+    .promotions
+      .promotions__header
+        h1.promotions__title Promotions & Bonuses
+        p.promotions__subtitle Discover our latest offers and exclusive bonuses
+        
+        .promotions__filter
+          button.promotions__filter-btn.active(data-filter="all") All Promotions
+          button.promotions__filter-btn(data-filter="active") Active
+          button.promotions__filter-btn(data-filter="expired") Expired
+      
+      .promotions__grid
+        each promo in promotions
+          - const isExpired = new Date(promo.endDate) < new Date()
+          +promoCard(promo.title, promo.description, promo.endDate, promo.image, isExpired)
